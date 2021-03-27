@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Screen1.dart';
+import 'package:uuid/uuid.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,18 +68,23 @@ class _MyCustomFormState extends State<MyCustomForm> {
     );
   }
   void onPressed1(BuildContext context){
-    print(myController.text);
     String message = myController.text;
-    myController.clear();
-    SaveToFirebase(message);
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Screen1(message : message)));
+    if(message!="") {
+      String id = Uuid().v1();
+      myController.clear();
+      SaveToFirebase(message, id);
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Screen1(message: message, id: id)));
+    }
   }
 // ignore: non_constant_identifier_names
-void SaveToFirebase(String message){
-    FirebaseFirestore db = FirebaseFirestore.instance;
-    db.collection("Messages").add({
-      "val": message
-    });
+void SaveToFirebase(String message, String id){
+    if(message!="") {
+      FirebaseFirestore db = FirebaseFirestore.instance;
+      db.collection("Messages").doc(id).set({
+        "val": message
+      });
+    }
 }
 }
 
