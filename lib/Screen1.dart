@@ -62,12 +62,10 @@ class Screen1State extends State<Screen1>{
         });
   }
 
-
   @override
   Widget build(BuildContext context) {
     uuid = id;
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: const Text('Beacon Broadcast'),
         ),
@@ -76,53 +74,51 @@ class Screen1State extends State<Screen1>{
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text('Is transmission supported?',
-                    style: Theme.of(context).textTheme.headline5),
-                Text('$_isTransmissionSupported',
-                    style: Theme.of(context).textTheme.subtitle1),
-                Container(height: 16.0),
+                Image.asset("assets/send.gif", height: 500,width: 500,),
                 Text('Is beacon started?',
                     style: Theme.of(context).textTheme.headline5),
                 Text('$_isAdvertising',
                     style: Theme.of(context).textTheme.subtitle1),
                 Container(height: 16.0),
-                Center(
-                  child: RaisedButton(
-                    onPressed: () {
-                      beaconBroadcast
-                          .setUUID(uuid)
-                          .setMajorId(majorId)
-                          .setMinorId(minorId)
-                          .setTransmissionPower(transmissionPower)
-                          .setAdvertiseMode(advertiseMode)
-                          .setIdentifier(identifier)
-                          .setLayout(layout)
-                          .setManufacturerId(manufacturerId)
-                          .start();
-                    },
-                    child: Text('START'),
-                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Center(
+                      child: RaisedButton(
+                        color: Colors.brown,
+                        onPressed: () {
+                          beaconBroadcast
+                              .setUUID(uuid)
+                              .setMajorId(majorId)
+                              .setMinorId(minorId)
+                              .setTransmissionPower(transmissionPower)
+                              .setAdvertiseMode(advertiseMode)
+                              .setIdentifier(identifier)
+                              .setLayout(layout)
+                              .setManufacturerId(manufacturerId)
+                              .start();
+                        },
+                        child: Text('START',style: TextStyle(color: Colors.white),),
+                      ),
+                    ),
+                    Center(
+                      child: RaisedButton(
+                        color: Colors.brown,
+                        onPressed: () {
+                          beaconBroadcast.stop();
+                        },
+                        child: Text('STOP', style: TextStyle(color: Colors.white),),
+                      ),
+                    ),
+                  ],
                 ),
-                Center(
-                  child: RaisedButton(
-                    onPressed: () {
-                      beaconBroadcast.stop();
-                    },
-                    child: Text('STOP'),
-                  ),
-                ),
-                Text('Beacon Data',
-                    style: Theme.of(context).textTheme.headline5),
-                Text('UUID: $uuid'),
-                Text('Identifier: $identifier'),
               ],
             ),
           ),
         ),
-      ),
     );
   }
 

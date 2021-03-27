@@ -2,12 +2,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/Screen1.dart';
+import 'package:flutter_app/wave.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wave/config.dart';
+import 'package:wave/wave.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
   runApp(MyApp());
 }
 
@@ -17,7 +26,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return
        MaterialApp(
-         home: MyCustomForm(),
+         theme: ThemeData(
+          primarySwatch: Colors.brown
+         ),
+         debugShowCheckedModeBanner: false,
+         home: SplashScreenView(
+             home: MyCustomForm(),
+           text: "Beaconer",
+           textStyle: TextStyle(fontSize: 25),
+           textType: TextType.TyperAnimatedText,
+           imageSrc: "assets/logo.png",
+           imageSize: 400,
+           duration: 4000,
+         ),
        );
 
 
@@ -45,26 +66,32 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
+    return Material(
+        color: Colors.white,
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
+          child: Column(mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Image.asset("assets/logo.png", height: 250, width: 250,),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextFormField(
                   controller: myController,
                   decoration: InputDecoration(
-                    hintText: "Enter a Message!",
-                    hintStyle: TextStyle(color: Colors.grey)
+                    labelText: 'Enter a message',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.message),
+                    focusColor: Colors.orange
                   ),
                 ),
-                TextButton(onPressed: () => onPressed1(context), child: Text("Send"),)
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom:70.0),
+                child: FlatButton(onPressed: () => onPressed1(context), child: Text("Send", style: TextStyle(color: Colors.white), ), color: Colors.orangeAccent,),
+              ),
+              WaveDemoHomePage(title: 'Wave Demo')
+            ],
           ),
         ),
-      ),
     );
   }
   void onPressed1(BuildContext context){
