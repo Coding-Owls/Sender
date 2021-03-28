@@ -9,6 +9,25 @@
 * Proximity marketing of products/services of any category.
 * Storage of promotions, which can be maintained easily over cloud database.
 * Can help in analysing products and promotions which are more attractive in consumer market.
+
+## About the Application
+
+### Home Screen
+![](homescreen.jpeg)<br/>
+
+The screenshot shown above is the Home Page of the Merchant's App.<br/>
+Merchant will enter an advertisement message in the text field and can save it for sending the message when needed. <br/>
+
+
+### Control Screen
+
+![](secondroute.jpeg)<br/>
+
+The screenshot above is basically the control Screen of the Merchant's App which appear after Home Screen. <br/>
+Merchant can start and stop transmitting the beacon. <br/>
+When the merchant starts the transmission users start getting the advertisement messages of the shop's merchant nearby them
+
+
 ## Project setup
 ### For setting up project in local PC
 1. Make sure you have got flutter (including the command line tool) and Android Studio installed.
