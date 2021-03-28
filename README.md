@@ -13,7 +13,7 @@
 ## About the Application
 
 ### Home Screen
-![](homescreen.jpeg)<br/>
+<img src="homescreen.jpeg" width="360" height="500">
 
 The screenshot shown above is the Home Page of the Merchant's App.<br/>
 Merchant will enter an advertisement message in the text field and can save it for sending the message when needed. <br/>
@@ -21,7 +21,7 @@ Merchant will enter an advertisement message in the text field and can save it f
 
 ### Control Screen
 
-![](secondroute.jpeg)<br/>
+<img src="secondroute.jpeg" width="360" height="600">
 
 The screenshot above is basically the control Screen of the Merchant's App which appear after Home Screen. <br/>
 Merchant can start and stop transmitting the beacon. <br/>
