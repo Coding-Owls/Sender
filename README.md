@@ -13,19 +13,18 @@
 ## About the Application
 
 ### Home Screen
-<img src="homescreen.jpeg" width="320" height="500">
-
-The screenshot shown above is the Home Page of the Merchant's App.<br/>
-Merchant will enter an advertisement message in the text field and can save it for sending the message when needed. <br/>
-
+* The screenshot shown below is the Home Page of the Merchant's App.<br/>
+* Merchant will enter an advertisement message in the text field. <br/>
+* Merchant can save it for sending the message when needed . <br/>
+* <img src="homescreen.jpeg" width="320" height="500">
 
 ### Control Screen
+* The screenshot shown below  is basically the control Screen.<br/>
+* This Screen appears after Home Screen. <br/>
+* Merchant can start and stop transmitting the beacon. <br/>
+* When the merchant starts the transmission users start getting the advertisement messages of the shop's merchant nearby them.<br/>
+* <img src="secondroute.jpeg" width="320" height="600">
 
-<img src="secondroute.jpeg" width="320" height="600">
-
-The screenshot above is basically the control Screen of the Merchant's App which appear after Home Screen. <br/>
-Merchant can start and stop transmitting the beacon. <br/>
-When the merchant starts the transmission users start getting the advertisement messages of the shop's merchant nearby them
 
 
 ## Project setup
