@@ -35,3 +35,14 @@
    on the yellow ribbon at the top.
 
 The repo's codebase is now setup on your local machine, and you can make changes to it and push them to the git repo.
+
+### Credits goes to these people:✨
+<table>
+	<tr>
+		<td>
+   <a href="https://github.com/Coding-Owls/Sender/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Coding-Owls/Sender" />
+</a>
+	</td>
+	</tr>
+</table>
