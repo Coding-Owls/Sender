@@ -16,7 +16,7 @@
 * The screenshot shown below is the Home Page of the Merchant's App.<br/>
 * Merchant will enter an advertisement message in the text field. <br/>
 * Merchant can save it for sending the message when needed . <br/>
-* <img src="homescreen.jpeg" width="320" height="500">
+* <img src="homescreen.jpeg" width="320" height="600">
 
 ### Control Screen
 * The screenshot shown below  is basically the control Screen.<br/>
